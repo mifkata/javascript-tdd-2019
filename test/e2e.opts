@@ -1,0 +1,7 @@
+--recursive
+--require @babel/register
+--file ./test/e2e.setup.js
+--bail
+--exit
+--timeout 5000
+./test/e2e/*.test.js

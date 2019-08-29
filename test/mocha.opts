@@ -1,0 +1,6 @@
+--recursive
+--require @babel/register
+--file ./examples/test.setup.js
+--bail
+--exit
+examples/**/*.test.js

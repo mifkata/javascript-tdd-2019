@@ -1,0 +1,61 @@
+{
+  "name": "javascript-tdd-2019",
+  "version": "1.0.0",
+  "description": "Examples and slides for a presentation on TDD with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "coverage": "nyc npm run test:all --all",
+    "dev": "npm run build:watch & npm run server",
+    "server": "node examples/api/express.js",
+    "build": "npm run build:clean && parcel build examples/**/index.html",
+    "build:clean": "rimraf dist",
+    "build:watch": "parcel watch examples/**/index.html",
+    "test": "NODE_ENV=test mocha",
+    "test:all": "npm run test:e2e && npm test",
+    "test:watch": "npm run test -- --watch",
+    "test:e2e": "npm start & sleep 30s && NODE_ENV=test mocha --opts ./test/e2e.opts",
+    "test:e2e:watch": "npm run dev & sleep 5s && NODE_ENV=test mocha --opts ./test/e2e.opts --watch"
+  },
+  "keywords": [
+    "jsx",
+    "javascript",
+    "parcel",
+    "react",
+    "express",
+    "superagent",
+    "supertest",
+    "tdd",
+    "testing",
+    "mocha",
+    "enzyme",
+    "chai",
+    "sinon"
+  ],
+  "author": "Andriyan Ivanov <andriyan.ivanov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "babel-polyfill": "^6.26.0",
+    "config": "^3.2.2",
+    "express": "^4.17.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "superagent": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.5.5",
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "parcel": "^1.12.3",
+    "puppeteer": "^1.19.0",
+    "rimraf": "^3.0.0",
+    "sinon": "^7.4.1",
+    "supertest": "^4.0.2"
+  }
+}
