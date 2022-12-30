@@ -51,7 +51,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "minimist": ">=0.2.1",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "nyc": "^14.1.1",
     "parcel": "^1.12.4",
     "puppeteer": "^1.19.0",
